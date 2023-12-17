@@ -11,8 +11,8 @@ pnpm dev
 
 ## Stack
 
-- [Next.js](https://nextjs.org/)
-- [Ant Design V5](https://ant.design/)
+- [Next.js v14](https://nextjs.org/)
+- [Ant Design v5](https://ant.design/)
 - [Ant Design Style](https://ant-design.github.io/antd-style/)
 - [`next-themes`](https://github.com/pacocoursey/next-themes/)
 
