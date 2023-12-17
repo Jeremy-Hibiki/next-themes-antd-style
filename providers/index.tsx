@@ -1,12 +1,25 @@
 import type { PropsWithChildren } from 'react';
-import { ConfigProvider } from 'antd';
-import zhCN from 'antd/es/locale/zh_CN';
-import AntdRegistry from './AntdRegistry';
+import { cookies } from 'next/headers';
+import type { ThemeMode } from 'antd-style';
+import { AntdConfigProvider, AntdRegistry } from './antd';
+import { AntdStyleConfigProvider, AntdStyleRegistry } from './antd-style';
+import { NextThemesProvider } from './next-themes';
 
 function Providers({ children }: PropsWithChildren) {
+  const cookieStore = cookies();
+  const theme = cookieStore.get('theme');
+
   return (
     <AntdRegistry>
-      <ConfigProvider locale={zhCN}>{children}</ConfigProvider>
+      <AntdStyleRegistry>
+        <NextThemesProvider>
+          <AntdConfigProvider>
+            <AntdStyleConfigProvider defaultAppearance={theme?.value}>
+              {children}
+            </AntdStyleConfigProvider>
+          </AntdConfigProvider>
+        </NextThemesProvider>
+      </AntdStyleRegistry>
     </AntdRegistry>
   );
 };
