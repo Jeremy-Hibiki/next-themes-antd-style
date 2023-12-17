@@ -58,24 +58,25 @@ export default function Home() {
               </Form.Item>
             </Form>
           </Flex>
-        </ConfigProvider>
-        <ComponentDemoPro
-          theme={{
-            name: 't',
-            key: 't',
-            config: {
-              token: {
-                ...token,
-                colorPrimary: primary,
+          <ComponentDemoPro
+            theme={{
+              name: 't',
+              key: 't',
+              config: {
+                token: {
+                  ...token,
+                  colorPrimary: primary,
+                },
+                algorithm: resolvedTheme === 'dark' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
+                cssVar: true,
               },
-              algorithm: resolvedTheme === 'dark' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
-            },
-          }}
-          style={{
-            width: '100%',
-            height: 'calc(100vh - 48px)',
-          }}
-        />
+            }}
+            style={{
+              width: '100%',
+              height: 'calc(100vh - 48px)',
+            }}
+          />
+        </ConfigProvider>
       </div>
     )
   );

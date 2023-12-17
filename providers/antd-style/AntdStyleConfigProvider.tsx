@@ -17,6 +17,9 @@ function AntdStyleConfigProvider({ children, defaultAppearance = 'light' }: Prop
         document.cookie = `theme=${themeMode};`;
       }}
       themeMode={resolvedTheme as ThemeMode}
+      theme={{
+        cssVar: true,
+      }}
     >
       {children}
     </ThemeProvider>
