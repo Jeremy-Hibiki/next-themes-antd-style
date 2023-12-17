@@ -1,9 +1,9 @@
 'use client';
 
-import { ColorPicker, ConfigProvider, Flex, Form, Segmented, Skeleton, Switch, theme as antdTheme } from 'antd';
+import { ColorPicker, ConfigProvider, Flex, Form, Segmented, Switch, theme as antdTheme } from 'antd';
 import ComponentDemoPro from 'antd-token-previewer/es/token-panel-pro/ComponentDemoPro';
 import { useTheme } from 'next-themes';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { resolvedTheme, setTheme } = useTheme();
